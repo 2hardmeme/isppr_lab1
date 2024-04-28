@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['wordtree']});
+      google.charts.setOnLoadCallback(drawSimpleNodeChart);
+      function drawSimpleNodeChart() {
+
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+          ['Apple - це технологічна компанія, яка заснувала нову еру у світі компютерів, мобільних пристроїв та електроніки споживчого вжитку. Заснована у 1976 році Стівом Джобсом, Стівом Возняком та Роном Уейном, компанія швидко стала однією з провідних у світі завдяки своїм інноваціям та стильному дизайну. Apple відома своїми іконічними продуктами, такими як iPhone, iPad, Mac, Apple Watch та Apple TV. Ці пристрої відзначаються високою якістю виготовлення, потужністю та простотою в користуванні, що забезпечує їм вірну базу фанатів по всьому світу. Компанія також розвивається у сферах програмного забезпечення та послуг. Її операційна система iOS є основою для мобільних пристроїв Apple, а macOS - для компютерів Mac. Додатки, такі як iTunes, App Store та iCloud, стали невідємною частиною життя мільйонів користувачів.']
+           ]
+        );
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            type: 'double',
+            word: 'Apple'
+          }
+        };
+        var wordtree = new google.visualization.WordTree(document.getElementById('wordtree_double'));
+        wordtree.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wordtree_double" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

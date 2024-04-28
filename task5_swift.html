@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['wordtree']});
+      google.charts.setOnLoadCallback(drawSimpleNodeChart);
+      function drawSimpleNodeChart() {
+
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+          ['Swift - це потужна та ефективна мова програмування, розроблена компанією Apple для створення програм для iOS, macOS, watchOS та tvOS. Представлена у 2014 році, вона швидко здобула популярність серед розробників завдяки своїй простоті, безпеці та високій продуктивності.Однією з ключових особливостей Swift є його безпека та захищеність, що досягається завдяки сучасним концепціям програмування, таким як типізація за допомогою типів, опціональні типи для уникнення нульових значень, а також автоматичне управління памяттю. Це робить Swift ідеальним вибором для розробки безпечних та надійних програм.Swift також відзначається простотою синтаксису, що дозволяє розробникам писати код більш зрозуміло та ефективно. Він підтримує багато сучасних функцій програмування, включаючи функціональне програмування, обробку помилок, розширення та протоколи.Крім того, Swift активно розвивається та підтримується спільнотою розробників. Apple регулярно випускає нові версії мови з покращеннями та новими можливостями, що робить її ще привабливішою для розробників програмного забезпечення.']
+           ]
+        );
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            type: 'double',
+            word: 'Swift'
+          }
+        };
+        var wordtree = new google.visualization.WordTree(document.getElementById('wordtree_double'));
+        wordtree.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wordtree_double" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
